@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
+    text-decoration: none !important; 
 }
 html{
     scroll-behavior: smooth;
@@ -30,7 +30,7 @@ html{
 section{
     padding: 100px 0;
 }
-.max-width{
+.main-max-width{
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
@@ -77,8 +77,8 @@ section .title::after{
     transform: translateX(-50%);
 }
 
-/* navbar styling */
-.navbar{
+/*main_navbar styling */
+.main_navbar{
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -86,32 +86,32 @@ section .title::after{
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
 }
-.navbar.sticky{
+.main_navbar.sticky{
     padding: 15px 0;
     background: #4d28a5;
 }
-.navbar .max-width{
+.main_navbar .main-max-width{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a{
+.main_navbar .logo a{
     color: #fff;
     font-size: 35px;
     font-weight: 600;
 }
-.navbar .logo a span{
+.main_navbar .logo a span{
     color: #4d28a5;
     transition: all 0.3s ease;
 }
-.navbar.sticky .logo a span{
+.main_navbar.sticky .logo a span{
     color: #fff;
 }
-.navbar .menu li{
+.main_navbar .navbar-menu li{
     list-style: none;
     display: inline-block;
 }
-.navbar .menu li a{
+.main_navbar .navbar-menu li a{
     display: block;
     color: #4d28a5;
     font-size: 18px;
@@ -120,19 +120,19 @@ section .title::after{
     transition: color 0.3s ease;
 }
 
-.navbar.sticky .menu li a {
+.main_navbar.sticky .navbar-menu li a {
     color: #fff;
 }
 
-.navbar .menu li a:hover{
+.main_navbar .navbar-menu li a:hover{
     color: #fff;
 }
-.navbar.sticky .menu li a:hover{
+.main_navbar.sticky .navbar-menu li a:hover{
     color: #fff;
 }
 
 /* menu btn styling */
-.scroll-up-btn{
+.main-scroll-up-btn{
     position: fixed;
     height: 45px;
     width: 42px;
@@ -151,12 +151,12 @@ section .title::after{
     pointer-events: none;
     transition: all 0.3s ease;
 }
-.scroll-up-btn.show{
+.main-scroll-up-btn.show{
     bottom: 30px;
     opacity: 1;
     pointer-events: auto;
 }
-.scroll-up-btn:hover{
+.main-scroll-up-btn:hover{
     filter: brightness(90%);
 }
 
@@ -172,11 +172,11 @@ section .title::after{
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
 }
-.home .max-width{
+.home .main-max-width{
   width: 100%;
   display: flex;
 }
-.home .max-width .row{
+.home .main-max-width .row{
   margin-right: 0;
 }
 .home .home-content .text-1{
@@ -270,7 +270,7 @@ section .title::after{
     background: #111;
     content: "";
 }
-.projects .serv-content .card{
+.projects .serv-content .project-card{
     width: calc(33% - 20px);
     height: 360px;
     background: #222;
@@ -280,24 +280,24 @@ section .title::after{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.projects .serv-content .card:hover{
+.projects .serv-content .project-card:hover{
     background: #4d28a5;
 }
-.projects .serv-content .card .box{
+.projects .serv-content .project-card .box{
     transition: all 0.3s ease;
 }
-.projects .serv-content .card:hover .box{
+.projects .serv-content .project-card:hover .box{
     transform: scale(1.05);
 }
-.projects .serv-content .card i{
+.projects .serv-content .project-card i{
     font-size: 50px;
     color: #4d28a5;
     transition: color 0.3s ease;
 }
-.projects .serv-content .card:hover i{
+.projects .serv-content .project-card:hover i{
     color: #fff;
 }
-.projects .serv-content .card .text{
+.projects .serv-content .project-card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
@@ -401,8 +401,12 @@ section .title::after{
     height: 65px;
     align-items: center;
 }
+.row i,.row a{
+    width: auto;
+}
 .contact .contact-content .row .info{
     margin-left: 30px;
+    width: auto;
 }
 .contact .contact-content .row i{
     font-size: 25px;
@@ -493,4 +497,111 @@ footer span a{
 }
 footer span a:hover{
     text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 420px) {
+    section {
+        width: 50px 0;
+    }
+    section .title {
+        margin-bottom: 30px;
+    }
+    .main-max-width {
+        padding: 0 50px;
+    }
+    .home .home-content .text-1 {
+        font-size: 20px;
+    }
+    .home .home-content .text-2 {
+        font-size: 30px;
+    }
+    .home .home-content .text-3 {
+        font-size: 25px;
+    }
+    .home .home-content a {
+        font-size: 20px;
+        padding: 2px 18px;
+    }
+    .about .about-content .left {
+        width: 100%;
+    }
+    .about .about-content .left img {
+        height: 200px;
+        width: 200px;
+        margin-left: 10px;
+    }
+    .about .about-content .right {
+        width: 100%;
+    }
+    .about .about-content .right .text {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    .about .about-content .right a {
+        margin-left: 20px;
+        font-size: 16px;
+        padding: 4px 30px;
+    }
+    section .title {
+        font-size: 30px;
+    }
+    .projects .serv-content .project-card {
+        width: 100%;
+        /* height: 280px; */
+        padding: 40px 15px;
+        margin-bottom: 10px;
+    }
+    section .title::after {
+       display: none;
+    }
+    .skills .skills-content .column {
+        width: 100%;
+    }
+    .skills .skills-content .left a {
+        font-size: 16px;
+        padding: 4px 12px;
+        margin-bottom: 30px;
+        margin-left: 70px;
+    }
+    .skills .skills-content .left .text {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .contact .contact-content .column {
+        width: 100%;
+    }
+    .contact .contact-content .row .info {
+        margin-left: 5px;
+    }
+    .contact .contact-content .social_icon i {
+        margin-left: 10px;
+        font-size: 28px;
+    }
+    .contact .contact-content .text {
+        margin-left: 65px;
+    }
+    .contact .right form .fields {
+        display: inline;
+    }
+    .right form .button-area button {
+        font-size: 16px;
+        margin-left: 50px;
+    }
+  
+
+}
+@media only screen and (max-width: 770px) {
+    .home {
+        height: 40vh;
+    }
+    .about .about-content .right {
+        width: 45%;
+    }
+    .projects .serv-content .project-card {
+        width: calc(33% - 5px);
+        height: 380px;
+    }
 }
